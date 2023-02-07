@@ -7,7 +7,7 @@ export const getList = createAsyncThunk(
     async()=>{
         try{
             const res = await axios.get(` https://my-json-server.typicode.com/HyungMinKim/
-            hyungmin/list/`);
+            site/list/`);
             return res.data;
         }catch(err){
             console.log(err)
@@ -21,7 +21,7 @@ export const addList =createAsyncThunk(
     async(newList)=>{
         try{
             const res = await axios.post(` https://my-json-server.typicode.com/HyungMinKim/
-            hyungmin/list/`,newList);
+            site/list/`,newList);
             return res.data;
         }catch(err){
             console.log(err)
@@ -33,7 +33,7 @@ export const deleteList =createAsyncThunk(
     async(id)=>{
         try{
             const res = await axios.delete(` https://my-json-server.typicode.com/HyungMinKim/
-            hyungmin/list/${id}`);
+            site/list/${id}`);
             return id;
         }catch(err){
             console.log(err)
@@ -46,7 +46,7 @@ export const updateList =createAsyncThunk(
     async({id,content})=>{
         try{
             const res = await axios.put(` https://my-json-server.typicode.com/HyungMinKim/
-            hyungmin/list/${id}`,{
+            site/list/${id}`,{
                 content:content
             });
             return {id,content}
